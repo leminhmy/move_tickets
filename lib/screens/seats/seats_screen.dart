@@ -30,6 +30,7 @@ class _SeatScreenState extends State<SeatScreen> {
               padding: EdgeInsets.symmetric(horizontal: size.height*0.02),
               child: Column(
                 children: [
+                  SizedBox(height: size.height*0.01,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

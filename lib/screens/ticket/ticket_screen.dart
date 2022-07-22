@@ -78,13 +78,12 @@ class _TicketScreenState extends State<TicketScreen> with SingleTickerProviderSt
                       Expanded(child: Stack(
                         children: [
                           Positioned(
-                            top: 0,
+                            top: size.height * 0.01,
                             right: size.height * 0.02,
                             left: size.height * 0.02,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-
                                 GestureDetector(
                                     onTap: ()=> Navigator.pop(context),
                                     child: IconShapeCircle(color: Color(0xff43355a),)),
