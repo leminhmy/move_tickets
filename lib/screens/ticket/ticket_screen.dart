@@ -1,6 +1,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:move_tickets/screens/seats/seats_screen.dart';
 import 'package:move_tickets/widget/big_text.dart';
 import 'package:move_tickets/widget/small_text.dart';
 import 'package:readmore/readmore.dart';
@@ -82,8 +83,11 @@ class _TicketScreenState extends State<TicketScreen> with SingleTickerProviderSt
                             left: size.height * 0.02,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                IconShapeCircle(color: Color(0xff43355a),),
+                              children: [
+
+                                GestureDetector(
+                                    onTap: ()=> Navigator.pop(context),
+                                    child: IconShapeCircle(color: Color(0xff43355a),)),
                                 IconShapeCircle(color: Color(0xff43355a),iconData: Icons.more_vert_outlined),
                               ],
                             ),
@@ -110,7 +114,6 @@ class _TicketScreenState extends State<TicketScreen> with SingleTickerProviderSt
                               ],
                             ),
                           ),
-
                         ],
                       )),
                       Expanded(child: SingleChildScrollView(
@@ -155,30 +158,33 @@ class _TicketScreenState extends State<TicketScreen> with SingleTickerProviderSt
 
                                           ),
 
-                                          child: Container(
-                                              width: double.maxFinite,
-                                              alignment: Alignment.center,
-                                              padding:  EdgeInsets.all(size.height * 0.02),
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(size.height * 0.02),
-                                                gradient: _animationController.value < 0.9?LinearGradient(
-                                                    begin: Alignment.topLeft,
-                                                    end: Alignment.bottomRight,
-                                                    colors: [
-                                                      Colors.indigo.shade900,
-                                                      const Color(0xff07073b),
-                                                    ]
-                                                ):LinearGradient(
-                                                    begin: Alignment.topLeft,
-                                                    end: Alignment.bottomRight,
-                                                    colors: [
-                                                      Colors.pink.shade700,
-                                                      Colors.purple.shade800,
-                                                    ]
-                                                ),
+                                          child: GestureDetector(
+                                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_)=>const SeatScreen())),
+                                            child: Container(
+                                                width: double.maxFinite,
+                                                alignment: Alignment.center,
+                                                padding:  EdgeInsets.all(size.height * 0.02),
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(size.height * 0.02),
+                                                  gradient: _animationController.value < 0.9?LinearGradient(
+                                                      begin: Alignment.topLeft,
+                                                      end: Alignment.bottomRight,
+                                                      colors: [
+                                                        Colors.indigo.shade900,
+                                                        const Color(0xff07073b),
+                                                      ]
+                                                  ):LinearGradient(
+                                                      begin: Alignment.topLeft,
+                                                      end: Alignment.bottomRight,
+                                                      colors: [
+                                                        Colors.pink.shade700,
+                                                        Colors.purple.shade800,
+                                                      ]
+                                                  ),
 
-                                              ),
-                                              child: BigText(text: "Reservation",fontSize: size.height * 0.02,))),
+                                                ),
+                                                child: BigText(text: "Reservation",fontSize: size.height * 0.02,)),
+                                          )),
                                     ),
 
                                   ],

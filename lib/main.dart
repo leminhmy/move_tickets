@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:move_tickets/screens/home/home_screen.dart';
 import 'package:move_tickets/screens/seats/seats_screen.dart';
 import 'package:move_tickets/screens/ticket/ticket_screen.dart';
 import 'package:move_tickets/screens/your_ticket/your_ticket.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const YourTicket(),
+      home: const HomeScreen(),
     );
   }
 }
