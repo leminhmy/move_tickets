@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:move_tickets/models/seat.dart';
+import 'package:move_tickets/screens/home/home_screen.dart';
 import 'package:move_tickets/widget/big_text.dart';
 import 'package:move_tickets/widget/icon_shape_circle.dart';
 import 'package:move_tickets/widget/small_text.dart';
@@ -34,7 +35,9 @@ class _SeatScreenState extends State<SeatScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const IconShapeCircle(color: Colors.black,),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                          child: const IconShapeCircle(color: Colors.black,)),
                       BigText(text: "Chosse Seats",fontWeight: FontWeight.bold,fontSize: size.height * 0.025),
                       const IconShapeCircle(iconData: Icons.calendar_month_outlined,color: Colors.black,),
 
@@ -168,9 +171,13 @@ class _SeatScreenState extends State<SeatScreen> {
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(size.width),bottomLeft: Radius.circular(size.width)),
 
                       ),
-                      child: Container(
-                          margin: EdgeInsets.all(size.height * 0.02),
-                          child: IconShapeCircle(color: Color(0xff424141),widget: Center(child: SmallText(text: "Buy",)),sizeWidget: size.height * 0.07,)),
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_)=>const HomeScreen())),
+
+                        child: Container(
+                            margin: EdgeInsets.all(size.height * 0.02),
+                            child: IconShapeCircle(color: Color(0xff424141),widget: Center(child: SmallText(text: "Buy",)),sizeWidget: size.height * 0.07,)),
+                      ),
                     )
                   ],
                 ),

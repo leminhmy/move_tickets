@@ -45,6 +45,7 @@ class _ChooseSeatsWidgetState extends State<ChooseSeatsWidget> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    print('testRebuild');
     return Column(
         children: List.generate(6, (indexColumn) {
           return

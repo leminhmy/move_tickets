@@ -21,10 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> pageScreen = [
     HomePage(),
-    Container(child: Center(child: BigText(text: "Page IsEmpty")),),
+    Container(child: Center(child: BigText(text: "Page Location")),),
     YourTicket(),
-    Container(child: Center(child: BigText(text: "Page IsEmpty")),),
-    Container(child: Center(child: BigText(text: "Page IsEmpty")),),
+    Container(child: Center(child: BigText(text: "Page Application")),),
+    Container(child: Center(child: BigText(text: "Page Person")),),
   ];
   int selectedPage = 0;
 
